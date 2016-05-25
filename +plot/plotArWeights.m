@@ -22,15 +22,17 @@ for ii = 1:nc
     cs(ii) = sum(ps <= 0.05);
 end
 
-plot.init; hist(cs,20)
+plot.init; hist(cs,20)cl
 
 %%
 
 mu = mean(ws);
 se = std(ws)/sqrt(nc);
+mu = mu(1:30); se = se(1:30);
 plot.init;
 plot(mu, 'LineWidth', 3);
 plot(mu+se, 'Color', [0.2 0.2 0.8]);
 plot(mu-se, 'Color', [0.2 0.2 0.8]);
-xlabel('# lags');
+plot(xlim, [0 0], 'k--');
+xlabel('time (secs)');
 ylabel('weight');

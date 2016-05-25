@@ -24,9 +24,9 @@ function compareDecoding(d, basedir, tag1, tag2)
     plot.init;
     es = cat(3, es1, es2);
     for ii = 1:size(es,2)
-        subplot(3,4,ii); hold on;
+%         subplot(3,4,ii); hold on;
         e = squeeze(es(:,ii,:));
-        plot(e(:,1), e(:,2), '.');
+        plot(e(:,1), e(:,2), 'k.', 'MarkerSize', 10);
         xlim([0 1]); ylim(xlim);
     end
     xlim([0 1]); ylim(xlim);
